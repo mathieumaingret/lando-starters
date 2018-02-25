@@ -31,13 +31,13 @@ Lando simplifie l'utilisation de **Docker** et propose notamment des environneme
 
 ###  Fichier de configuration .lando.yml 
 
+Les starters sont eux-mêmes basés sur les fichiers de configuration par défaut proposés par lando.
 Dupliquer un des starters en *.lando.yml*, le placer à la base du site et le modifier :
 
 
 | Donnée | Instructions | Exemples |
 |--|--|--|
 | *APPNAME* | Nom machine de l'application | mon-site
-| *webroot* | Emplacement relatif du contenu du site Internet | "." si .lando.yml est au même niveau que les fichiers du site |
 
 ### Création des containers
 
