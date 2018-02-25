@@ -1,0 +1,68 @@
+######
+# Wordpress 1.1
+# @see https://docs.devwithlando.io/tutorials/wordpress.html
+# @see https://github.com/lando/lando/blob/master/examples/wordpress/.lando.yml
+# @see https://docs.devwithlando.io/tutorials/setup-additional-services.html
+######
+
+
+# Name
+name: bistrot-potager
+
+
+# Recipe used
+recipe: wordpress
+config:
+  webroot: web
+  php: '7.0'
+  via: apache
+  database: mariadb:latest
+  xdebug: false
+
+
+# Commands on events
+events:
+  post-start:
+    - appserver: cd ~ && echo "alias ll='ls -la'" > .bashrc
+
+
+# Access
+proxy:
+  appserver:
+    - bistrot-potager.lndo.site
+  mailhog:
+    - mail.bistrot-potager.lndo.site
+  pma:
+    - pma.bistrot-potager.lndo.site
+
+
+# Additional services
+services:
+  appserver:
+    composer:
+      deployer/deployer: '4.3.0'
+  node:
+    type: node:6.10
+    globals:
+      gulp-cli: "latest"
+  mailhog:
+    type: mailhog
+    hogfrom:
+      - appserver
+  pma:
+    type: phpmyadmin
+
+
+# Additionnal commands line "lando XXX"
+tooling:
+  npm:
+    service: node
+  node:
+    service: node
+  yarn:
+    service: node
+  gulp:
+    service: node
+  dep:
+    service: appserver
+    description: "Deploy app with deploy.php"
