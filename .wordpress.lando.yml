@@ -7,7 +7,7 @@
 
 
 # Name
-name: bistrot-potager
+name: APPNAME
 
 
 # Recipe used
@@ -29,11 +29,11 @@ events:
 # Access
 proxy:
   appserver:
-    - bistrot-potager.lndo.site
+    - APPNAME.lndo.site
   mailhog:
-    - mail.bistrot-potager.lndo.site
+    - mail.APPNAME.lndo.site
   pma:
-    - pma.bistrot-potager.lndo.site
+    - pma.APPNAME.lndo.site
 
 
 # Additional services
