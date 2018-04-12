@@ -24,7 +24,7 @@ config:
 events:
   post-start:
     - appserver: cd $LANDO_MOUNT && composer install
-    - appserver: cd $LANDO_WEBROOT && php script.php
+    #- appserver: cd $LANDO_WEBROOT && php script.php
     - appserver: cd ~ && echo "alias ll='ls -la'" > .bashrc
   post-db-import:
     - appserver: cd $LANDO_WEBROOT && drush cr -y
@@ -46,6 +46,7 @@ services:
   appserver:
     composer:
       deployer/deployer: '4.3.0'
+      drush/drush: '9.*'
   node:
     type: node:latest
     globals:
