@@ -1,5 +1,5 @@
 ######
-# Custom 1.1
+# Custom 1.2
 # @see https://docs.devwithlando.io/tutorials/lamp.html
 # @see https://github.com/lando/lando/blob/master/examples/lamp/.lando.yml
 # @see https://docs.devwithlando.io/tutorials/setup-additional-services.html
@@ -14,9 +14,9 @@ name: APPNAME
 recipe: lamp
 config:
   webroot: .
-  php: '7.0'
+  php: '7.2'
   via: apache
-  database: mariadb:latest
+  database: mariadb
   xdebug: false
 
 
@@ -40,9 +40,9 @@ proxy:
 services:
   appserver:
     composer:
-      deployer/deployer: '4.3.0'
+      deployer/deployer: '6.*'
   node:
-    type: node:6.10
+    type: node:latest
     globals:
       gulp-cli: "latest"
   mailhog:

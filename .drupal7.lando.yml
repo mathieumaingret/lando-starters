@@ -1,5 +1,5 @@
 ######
-# Drupal 7 1.3
+# Drupal 7 1.4
 # @see https://docs.devwithlando.io/tutorials/drupal7.html
 # @see https://github.com/lando/lando/blob/master/examples/drupal7/.lando.yml
 # @see https://docs.devwithlando.io/tutorials/setup-additional-services.html
@@ -14,10 +14,10 @@ name: APPNAME
 recipe: drupal7
 config:
   webroot: .
-  php: '7.0'
+  php: '7.2'
   via: apache
   drush: global:8.1.15
-  database: mariadb:latest
+  database: mariadb
   xdebug: false
 
 
@@ -44,9 +44,9 @@ proxy:
 services:
   appserver:
     composer:
-      deployer/deployer: '4.3.0'
+      deployer/deployer: '6.*'
   node:
-    type: node:6.10
+    type: node:latest
     globals:
       gulp-cli: "latest"
   mailhog:

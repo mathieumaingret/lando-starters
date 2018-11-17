@@ -1,5 +1,5 @@
 ######
-# Drupal 8 1.1
+# Drupal 8 1.2
 # @see https://docs.devwithlando.io/tutorials/drupal8.html
 # @see https://github.com/lando/lando/blob/master/examples/drupal8/.lando.yml
 # @see https://docs.devwithlando.io/tutorials/setup-additional-services.html
@@ -14,17 +14,16 @@ name: APPNAME
 recipe: drupal8
 config:
   webroot: .
-  php: '7.0'
+  php: '7.2'
   via: apache
-  database: mariadb:latest
+  database: mariadb
   xdebug: false
 
 
 # Commands on events
 events:
   post-start:
-    - appserver: cd $LANDO_MOUNT && composer install
-    #- appserver: cd $LANDO_WEBROOT && php script.php
+    #- appserver: cd $LANDO_MOUNT && composer install
     - appserver: cd ~ && echo "alias ll='ls -la'" > .bashrc
   post-db-import:
     - appserver: cd $LANDO_WEBROOT && drush cr -y
@@ -45,8 +44,7 @@ proxy:
 services:
   appserver:
     composer:
-      deployer/deployer: '4.3.0'
-      drush/drush: '9.*'
+      deployer/deployer: '6.*'
   node:
     type: node:latest
     globals:
