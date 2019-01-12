@@ -1,5 +1,5 @@
 ######
-# Drupal 7 1.4
+# Drupal 7 1.5
 # @see https://docs.devwithlando.io/tutorials/drupal7.html
 # @see https://github.com/lando/lando/blob/master/examples/drupal7/.lando.yml
 # @see https://docs.devwithlando.io/tutorials/setup-additional-services.html
@@ -16,7 +16,6 @@ config:
   webroot: .
   php: '7.2'
   via: apache
-  drush: global:8.1.15
   database: mariadb
   xdebug: false
 
