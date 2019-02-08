@@ -1,5 +1,5 @@
 ######
-# Drupal 7 1.5
+# Drupal 7 1.6
 # @see https://docs.devwithlando.io/tutorials/drupal7.html
 # @see https://github.com/lando/lando/blob/master/examples/drupal7/.lando.yml
 # @see https://docs.devwithlando.io/tutorials/setup-additional-services.html
@@ -45,7 +45,7 @@ services:
     composer:
       deployer/deployer: '6.*'
   node:
-    type: node:latest
+    type: node:11
     globals:
       gulp-cli: "latest"
   mailhog:

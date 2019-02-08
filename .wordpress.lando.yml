@@ -1,5 +1,5 @@
 ######
-# Wordpress 1.4
+# Wordpress 1.5
 # @see https://docs.devwithlando.io/tutorials/wordpress.html
 # @see https://github.com/lando/lando/blob/master/examples/wordpress/.lando.yml
 # @see https://docs.devwithlando.io/tutorials/setup-additional-services.html
@@ -42,7 +42,7 @@ services:
     composer:
       deployer/deployer: '6.*'
   node:
-    type: node:latest
+    type: node:11
     globals:
       gulp-cli: "latest"
   mailhog:
