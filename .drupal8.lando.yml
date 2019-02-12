@@ -17,7 +17,6 @@ config:
   php: '7.2'
   via: apache
   database: mariadb
-  drush: composer
   xdebug: false
 
 
