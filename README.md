@@ -130,13 +130,13 @@ $ ln -s /user/.ssh/* .
 
 Login as root user
 ```
-$ lando ssh --user root :
+$ lando ssh --user root
 ```
 
 Once connected :
 ```
-$ apt-get update
-$ apt-get install htop
+# apt-get update
+# apt-get install htop
 ```
 
 Run command :
