@@ -116,3 +116,32 @@ $secrets['database_name'] = getenv('DB_NAME'); // wordpress
 $secrets['database_user'] = getenv('DB_USER'); // wordpress
 $secrets['database_pass'] = getenv('DB_PASSWORD'); // wordpress
 ```
+## Protips
+
+### SSH keys missing
+
+```
+$ lando ssh
+$ cd ~/.ssh
+$ ln -s /user/.ssh/* .
+```
+
+### Install htop
+
+Login as root user
+```
+$ lando ssh --user root :
+```
+
+Once connected :
+```
+$ apt-get update
+$ apt-get install htop
+```
+
+Run command :
+
+```
+$ htop // from appserver container
+$ lando ssh --command "htop" // from your computer shell
+```
