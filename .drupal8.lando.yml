@@ -43,6 +43,8 @@ proxy:
 # Additional services
 services:
   appserver:
+    build:
+      - composer install
     composer:
       deployer/deployer: '6.*'
   node:
@@ -59,6 +61,8 @@ services:
 
 # Additionnal commands line "lando XXX"
 tooling:
+  drush:
+    cmd: /app/vendor/bin/drush
   npm:
     service: node
   node:
