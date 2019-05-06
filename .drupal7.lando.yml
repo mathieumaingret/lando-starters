@@ -1,8 +1,6 @@
 ######
-# Drupal 7 1.6
-# @see https://docs.devwithlando.io/tutorials/drupal7.html
-# @see https://github.com/lando/lando/blob/master/examples/drupal7/.lando.yml
-# @see https://docs.devwithlando.io/tutorials/setup-additional-services.html
+# Drupal 7 1.7
+# @link https://docs.devwithlando.io/tutorials/drupal7.html
 ######
 
 
@@ -14,7 +12,7 @@ name: APPNAME
 recipe: drupal7
 config:
   webroot: .
-  php: '7.2'
+  php: '7.3'
   via: apache
   database: mariadb
   xdebug: false
@@ -25,8 +23,8 @@ events:
   post-db-import:
     - appserver: cd $LANDO_WEBROOT && drush fra -y
     - appserver: cd $LANDO_WEBROOT && drush cc all -y
-  post-start:
-    - appserver: cd ~ && echo "alias ll='ls -la'" > .bashrc
+#  post-start:
+#    - appserver: cd ~ && echo "alias ll='ls -la'" > .bashrc
 
 
 # Access

@@ -1,8 +1,6 @@
 ######
-# Wordpress 1.5
-# @see https://docs.devwithlando.io/tutorials/wordpress.html
-# @see https://github.com/lando/lando/blob/master/examples/wordpress/.lando.yml
-# @see https://docs.devwithlando.io/tutorials/setup-additional-services.html
+# Wordpress 1.6
+# @link https://docs.devwithlando.io/tutorials/wordpress.html
 ######
 
 
@@ -14,16 +12,16 @@ name: APPNAME
 recipe: wordpress
 config:
   webroot: .
-  php: '7.2'
+  php: '7.3'
   via: apache
   database: mariadb
   xdebug: false
 
 
 # Commands on events
-events:
-  post-start:
-    - appserver: cd ~ && echo "alias ll='ls -la'" > .bashrc
+#events:
+#  post-start:
+#    - appserver: cd ~ && echo "alias ll='ls -la'" > .bashrc
 
 
 # Access
